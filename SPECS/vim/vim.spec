@@ -2,13 +2,14 @@
 Summary:        Text editor
 Name:           vim
 Version:        9.1.1198
-Release:        1%{?dist}
+Release:        2%{?dist}
 License:        Vim
 Vendor:         Microsoft Corporation
 Distribution:   Mariner
 Group:          Applications/Editors
 URL:            https://www.vim.org
 Source0:        https://github.com/%{name}/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Patch0:         CVE-2025-5918.patch
 
 BuildRequires:  ncurses-devel
 BuildRequires:  python3-devel
@@ -201,6 +202,9 @@ fi
 %{_datarootdir}/vim/vim91/README.txt
 
 %changelog
+* Thu Jul 10 2025 Rohit Rawat <xordux@gmail.com> - 9.1.1198-2
+- Patch for CVE-2025-5918
+
 * Mon Mar 17 2025 CBL-Mariner Servicing Account <cblmargh@microsoft.com> - 9.1.1198-1
 - Auto-upgrade to 9.1.1198 - for CVE-2025-29768
 
